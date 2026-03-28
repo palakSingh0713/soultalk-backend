@@ -1,0 +1,1 @@
+{"conversation_id":"chat_69bdfdcf93be02.28408213","character_id":"maya","memory_summary":"Recent conversation about: softly, gentle, here. 5 total messages exchanged.","key_topics":["okay","something","serious"],"user_preferences":{},"emotional_tone":"neutral"}

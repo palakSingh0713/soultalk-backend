@@ -1,0 +1,48 @@
+# Environment variables
+.env
+
+# Uploaded files
+uploads/*
+!uploads/.gitkeep
+
+# Logs
+*.log
+logs/
+error_log
+
+# Database
+*.sql
+*.sqlite
+*.db
+
+# Session files
+session_debug.txt
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Dependencies
+vendor/
+node_modules/
+
+# Composer
+composer.phar
+composer.lock
+
+# PHP specific
+.phpunit.result.cache
+phpunit.xml

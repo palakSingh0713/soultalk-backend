@@ -1,0 +1,75 @@
+body.story-page {
+    background: radial-gradient(circle at top, #0f011a, #330355);
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+}
+
+.story-wrapper {
+    max-width: 600px;
+    margin: 60px auto;
+    background: rgba(255,255,255,0.08);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+}
+
+h1 {
+    text-align: center;
+    color: #d6b3ff;
+}
+
+.subtitle {
+    text-align: center;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.upload-box {
+    display: block;
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.15);
+    text-align: center;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border-radius: 18px;
+    background: linear-gradient(135deg,#a855f7,#09010f);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.saved {
+    text-align: center;
+    margin-top: 15px;
+    color: #c084fc;
+}

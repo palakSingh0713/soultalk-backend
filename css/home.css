@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #12001b, #3e005f);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.navbar {
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 600;
+    color: #c77dff;
+}
+
+.hero {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    color: #e0aaff;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: #9d4edd;
+    border: none;
+    color: white; 
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #7b2cbf;
+    transform: scale(1.05);
+}
+
+.navbar a,
+.navbar a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #c084fc;
+    /* purple glow */
+}
