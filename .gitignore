@@ -46,3 +46,6 @@ composer.lock
 # PHP specific
 .phpunit.result.cache
 phpunit.xml
+
+.env
+.env.production
