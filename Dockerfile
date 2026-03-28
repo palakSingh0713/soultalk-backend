@@ -1,13 +1,11 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-RUN a2enmod headers rewrite
+WORKDIR /var/www/html
 
-COPY php/ /var/www/html/
+COPY php/ .
 
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+EXPOSE 8080
 
-EXPOSE 80
-
-CMD ["apache2-foreground"]
+CMD ["php", "-S", "0.0.0.0:8080"]
