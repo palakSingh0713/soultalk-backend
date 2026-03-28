@@ -4,7 +4,7 @@
    CORS HEADERS (MUST BE FIRST)
 =================================*/
 
-header("header('Access-Control-Allow-Origin: https://soultalk-app.netlify.app');;
+header("Access-Control-Allow-Origin: https://soultalk-app.netlify.app");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Access-Control-Allow-Credentials: true");
