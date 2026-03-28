@@ -267,7 +267,7 @@ NOW SPEAK AS $name. Stay in character completely. Do not break:
    GROQ API CALL
 =================================*/
 
-$apiKey = getenv('GROQ_API_KEY') ?: "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";
+$apiKey = getenv('GROQ_API_KEY');
 
 $payload = [
     "model" => "llama-3.3-70b-versatile",
