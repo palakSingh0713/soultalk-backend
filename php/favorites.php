@@ -18,16 +18,17 @@ session_start();
 require_once 'config.php';
 
 try {
-    if (!isset($_SESSION['user_email'])) {
-        http_response_code(401);
-        echo json_encode(['success' => false, 'error' => 'Not authenticated']);
-        exit();
-    }
+$input = json_decode(file_get_contents('php://input'), true);
+$user_email = $input['user_email'] ?? $_SESSION['user_email'] ?? null;
 
-    $user_email = $_SESSION['user_email'];
+if (!$user_email) {
+    http_response_code(401);
+    echo json_encode(['success' => false, 'error' => 'Not authenticated']);
+    exit();
+}
     $method = $_SERVER['REQUEST_METHOD'];
 
-    if ($method === 'GET') {
+    if ($method === 'GET' || ($method === 'POST' && ($input['action'] ?? '') === 'get')) {
         $stmt = $conn->prepare("SELECT character_id FROM favorite_characters WHERE user_email = ?");
         $stmt->bind_param("s", $user_email);
         $stmt->execute();
