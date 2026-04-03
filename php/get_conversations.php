@@ -16,7 +16,7 @@ require_once 'config.php';
 $input = file_get_contents("php://input");
 $body = json_decode($input, true);
 
-$user_email = $_SESSION['user_email'] ?? $body['user_email'] ?? null;
+$user_email = $body['user_email'] ?? $_SESSION['user_email'] ?? null;
 
 if (!$user_email) {
     echo json_encode(['success' => false, 'error' => 'No email', 'conversations' => []]);
