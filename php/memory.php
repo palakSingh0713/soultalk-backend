@@ -69,6 +69,7 @@ try {
         
         $conversation_id = $input['conversation_id'] ?? '';
         $character_id = $input['character_id'] ?? '';
+        $character_id = preg_replace('/[^0-9]/', '', $character_id) ?: '0';
         $memory_summary = $input['memory_summary'] ?? '';
         $key_topics = json_encode($input['key_topics'] ?? []);
         $user_preferences = json_encode($input['user_preferences'] ?? []);
