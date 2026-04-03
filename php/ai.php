@@ -36,11 +36,12 @@ function send_response($data, $code = 200) {
    TEMP LOGIN BYPASS (TESTING ONLY)
 =================================*/
 
-if (!isset($_SESSION['user_email'])) {
-    $_SESSION['user_email'] = "test@example.com";
-}
+$input = file_get_contents("php://input");
+$data = json_decode($input, true);
 
-$user_email = $_SESSION['user_email'];
+$user_email = $_SESSION['user_email'] 
+    ?? $data['user_email'] 
+    ?? 'guest@soultalk.app';
 
 /* ===============================
    READ REQUEST

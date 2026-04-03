@@ -31,17 +31,16 @@ try {
     
     $isPublic = $character['isPublic'] ? 1 : 0;
     
-    $stmt->bind_param(
-        "ssssssis",
-        $character['id'],
-        $user_email,
-        $character['name'],
-        $character['tagline'],
-        $character['personality'],
-        $character['firstMessage'],
-        $isPublic,
-        $character['image']
-    );
+$stmt->bind_param(
+    "sssssis",
+    $user_email,
+    $character['name'],
+    $character['tagline'],
+    $character['personality'],
+    $character['firstMessage'],
+    $isPublic,
+    $character['image']
+);
     
     $stmt->execute();
     $stmt->close();

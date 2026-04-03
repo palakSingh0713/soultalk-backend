@@ -24,7 +24,9 @@ try {
         $_SESSION['user_email'] = 'test@example.com';
     }
 
-    $user_email = $_SESSION['user_email'];
+   $user_email = $_SESSION['user_email'] 
+    ?? $input['user_email'] 
+    ?? 'guest@soultalk.app';
     $method = $_SERVER['REQUEST_METHOD'];
 
     // GET - Retrieve conversation memory
