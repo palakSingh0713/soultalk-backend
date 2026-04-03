@@ -16,27 +16,31 @@ session_start();
 require_once 'config.php';
 
 try {
-    // Auth check - same pattern as ai.php
-    if (!isset($_SESSION['user_email'])) {
-        $_SESSION['user_email'] = 'test@example.com';
-    }
+   $input = file_get_contents("php://input");
+$body = json_decode($input, true);
 
-    $user_email = $_SESSION['user_email'];
+$user_email = $_SESSION['user_email'] 
+    ?? $body['user_email'] 
+    ?? null;
 
+if (!$user_email) {
+    echo json_encode(['success' => false, 'error' => 'Not logged in']);
+    exit();
+}
     // Get conversations
-    $query = "
-        SELECT 
-            conversation_id,
-            character_id,
-            MAX(CASE WHEN sender = 'bot' THEN message END) as last_message,
-            MAX(created_at) as last_updated,
-            COUNT(*) as message_count
-        FROM chat_history
-        WHERE user_email = ? AND conversation_id IS NOT NULL
-        GROUP BY conversation_id, character_id
-        ORDER BY last_updated DESC
-        LIMIT 50
-    ";
+$query = "
+    SELECT 
+        conversation_id,
+        character_id,
+        MAX(CASE WHEN sender = 'bot' THEN message END) as last_message,
+        MAX(created_at) as last_updated,
+        COUNT(*) as message_count
+    FROM chat_history
+    WHERE user_email = ?
+    GROUP BY conversation_id, character_id
+    ORDER BY last_updated DESC
+    LIMIT 50
+";
 
     $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $user_email);
